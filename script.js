@@ -73,4 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
             animationActive = false;
         }
     }
+    // Get the ad button element
+    const adButton = document.getElementById('adButton');
+
+    // Add click event listener
+    adButton.addEventListener('click', function () {
+        // Redirect to the moreAds page
+        // Change 'moreAds.html' to the actual filename of your second page
+        window.location.href = 'moreAds.html';
+    });
 });
