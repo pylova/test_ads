@@ -4,35 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>You just saw Web Interstitials!</title>
+    <title>Anchor Ad Success</title>
     <link rel="stylesheet" href="style.css" />
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
     <script>
         window.googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(function () {
-            googletag.defineOutOfPageSlot('/6075/diana_test_Anchor', 'div-gpt-ad-1765809195300-0').addService(googletag.pubads());
+            // 1. Define the anchor slot
+            const anchorSlot = googletag.defineOutOfPageSlot(
+                '/6075/diana_test_Anchor',
+                googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+            );
+
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+
+            // 2. Enable services
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
+
+            // 3. Trigger the display right here
+            googletag.display(anchorSlot);
         });
     </script>
-
 </head>
 
 <body>
     <header>
-        <h1>🎁 You just saw Web Interstitials! 🎁</h1>
+        <h1>🎁 Anchor Ad Test 🎁</h1>
     </header>
 
     <main>
         <div class="birthday-message">
             <h2>Check out these special offers</h2>
-        </div>
-        <!-- /6075/diana_test_Anchor -->
-        <div id='div-gpt-ad-1765809195300-0'>
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1765809195300-0'); });
-            </script>
-        </div>
+            <p>The sticky ad should appear at the bottom of your screen.</p>
         </div>
 
         <div style="text-align: center; margin-top: 30px;">
