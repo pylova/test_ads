@@ -98,12 +98,6 @@ footer {
     animation: bounce 2s infinite;
 }
 
-.arrow-left {
-    left: 200px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 .arrow-bottom {
     bottom: 120px;
     /* Sitting above the anchor ad */
