@@ -1,9 +1,12 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Festive font */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* Festive font */
     line-height: 1.6;
     margin: 0;
-    background-color: #ffeff4; /* Light pink background */
-    color: #5b2c6f; /* Deep purple text */
+    background-color: #ffeff4;
+    /* Light pink background */
+    color: #5b2c6f;
+    /* Deep purple text */
 }
 
 header {
@@ -12,7 +15,7 @@ header {
     padding: 20px 0;
     text-align: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 1.5em;
 }
 
@@ -20,7 +23,7 @@ main {
     padding: 20px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 800px;
     margin: 20px auto;
@@ -40,7 +43,8 @@ main {
 
 button {
     padding: 15px 25px;
-    background-color: #ff69b4; /* Hot pink */
+    background-color: #ff69b4;
+    /* Hot pink */
     color: white;
     border: none;
     border-radius: 25px;
@@ -50,14 +54,16 @@ button {
 }
 
 button:hover {
-    background-color: #ff1493; /* Deep pink */
+    background-color: #ff1493;
+    /* Deep pink */
     transform: scale(1.05);
 }
 
 #message {
     margin-top: 15px;
     font-weight: bold;
-    color: #2ecc71; /* Green */
+    color: #2ecc71;
+    /* Green */
 }
 
 footer {
@@ -73,6 +79,53 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Make canvas click-through */
+    pointer-events: none;
+    /* Make canvas click-through */
     z-index: 9999;
+}
+
+.debug-arrow {
+    position: fixed;
+    color: #ff69b4;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px dashed #ff69b4;
+    animation: bounce 2s infinite;
+}
+
+.arrow-left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow-bottom {
+    bottom: 120px;
+    /* Sitting above the anchor ad */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    40% {
+        transform: translateY(-10px) translateX(-5px);
+    }
+
+    60% {
+        transform: translateY(-5px) translateX(0);
+    }
 }

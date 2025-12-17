@@ -10,7 +10,7 @@
     <script>
         window.googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(function () {
-            // Define the anchor slot
+            // 1. Define Bottom Anchor
             const anchorSlot = googletag.defineOutOfPageSlot(
                 '/6075/diana_test_Anchor',
                 googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
@@ -20,6 +20,7 @@
                 anchorSlot.addService(googletag.pubads());
             }
 
+            // 2. Define Left Side Rail
             const leftSideRail = googletag.defineOutOfPageSlot(
                 "/6075/diana_test_side_rail",
                 googletag.enums.OutOfPageFormat.LEFT_SIDE_RAIL
@@ -28,7 +29,7 @@
             if (leftSideRail) {
                 leftSideRail.addService(googletag.pubads());
             }
-            // 2. Enable services
+
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
 
@@ -40,6 +41,9 @@
 </head>
 
 <body>
+    <div class="debug-arrow arrow-left">⬅ Side Rail Ad Here</div>
+    <div class="debug-arrow arrow-bottom">⬇ Anchor Ad / Button Area Below</div>
+
     <header>
         <h1>🎁 Anchor Ad Test 🎁</h1>
     </header>
