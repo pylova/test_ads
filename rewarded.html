@@ -45,6 +45,12 @@
 
                 googletag.pubads().addEventListener("slotRenderEnded", (event) => {
                     if (event.slot === rewardedSlot) {
+                        console.log("Slot render ended:", {
+                            isEmpty: event.isEmpty,
+                            creativeId: event.creativeId,
+                            lineItemId: event.lineItemId,
+                            event: event
+                        });
                         if (event.isEmpty) {
                             updateStatus("No ad returned for rewarded ad slot.");
                             document.getElementById("showButton").disabled = true;
