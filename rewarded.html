@@ -15,6 +15,7 @@
         let makeVisibleCallback = null;
 
         googletag.cmd.push(() => {
+            // Define the rewarded ad slot - it will be displayed out-of-page
             rewardedSlot = googletag.defineOutOfPageSlot(
                 "/22639388115/rewarded_web_example", // Google's test ad unit
                 googletag.enums.OutOfPageFormat.REWARDED,
@@ -25,6 +26,9 @@
 
                 googletag.pubads().addEventListener("rewardedSlotReady", (event) => {
                     updateStatus("Rewarded ad slot is ready.");
+                    console.log("Rewarded slot ready:", event);
+                    
+                    // Store the callback to show the ad when user clicks
                     makeVisibleCallback = () => {
                         event.makeRewardedVisible();
                         updateStatus("Rewarded ad is active.");
@@ -34,13 +38,15 @@
 
                 googletag.pubads().addEventListener("rewardedSlotVideoCompleted", (event) => {
                     updateStatus("Video ad has finished playing.");
+                    console.log("Video completed:", event);
                 });
 
                 googletag.pubads().addEventListener("rewardedSlotClosed", dismissRewardedAd);
 
                 googletag.pubads().addEventListener("rewardedSlotGranted", (event) => {
                     rewardPayload = event.payload;
-                    updateStatus("Reward granted: " + rewardPayload.type + " " + rewardPayload.amount);
+                    updateStatus("Reward granted: " + rewardPayload.amount + " " + rewardPayload.type);
+                    console.log("Reward granted:", rewardPayload);
                 });
 
                 googletag.pubads().addEventListener("slotRenderEnded", (event) => {
@@ -55,7 +61,8 @@
                             updateStatus("No ad returned for rewarded ad slot.");
                             document.getElementById("showButton").disabled = true;
                         } else {
-                            updateStatus("Rewarded ad rendered.");
+                            updateStatus("Rewarded ad loaded and ready to play.");
+                            document.getElementById("showButton").disabled = false;
                         }
                     }
                 });
