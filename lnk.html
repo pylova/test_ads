@@ -10,7 +10,7 @@
     <script>
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
-        googletag.defineOutOfPageSlot.INTERSTITIAL('/21873556873/popup_desktop', 'div-gpt-ad-1775037737088-0').addService(googletag.pubads());
+        googletag.defineOutOfPageSlot('/21873556873/popup_desktop', googletag.enums.OutOfPageFormat.INTERSTITIAL, 'div-gpt-ad-1775037737088-0').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
       });
