@@ -16,7 +16,12 @@
         .defineSlot("/6075/diana_test_web", [728, 90], "div-gpt-ad-1764760155015-0")
         .addService(googletag.pubads());
 
-      // 2. Define the Web Interstitial Slot
+      // 2. Define the Top Anchor Slot
+      googletag
+        .defineOutOfPageSlot('/6075/diana_test_Anchor', googletag.enums.OutOfPageFormat.TOP_ANCHOR)
+        .addService(googletag.pubads());
+
+      // 3. Define the Web Interstitial Slot
       googletag
         .defineOutOfPageSlot("/6075/diana_Web_Interstitials", googletag.enums.OutOfPageFormat.INTERSTITIAL)
         .addService(googletag.pubads());
@@ -28,6 +33,12 @@
 </head>
 
 <body>
+  <div id="div-gpt-ad-1777545887016-0"></div>
+  <script>
+    googletag.cmd.push(function () {
+      googletag.display("div-gpt-ad-1777545887016-0");
+    });
+  </script>
   <header>
     <h1>🎉 Happy Birthday! 🎂</h1>
   </header>
@@ -59,6 +70,9 @@
     <a href="lnk.html" class="button-style">Test LNk Ad Unit</a>
     <p id="message"></p>
     <canvas id="confettiCanvas"></canvas>
+    <p> Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+       sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </main>
   <footer>
     <p>Made with &hearts; for the special day!</p>
